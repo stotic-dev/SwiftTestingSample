@@ -61,6 +61,6 @@ jobs:
           -scheme ${TARGET_SCHEME_NAME}
           -sdk iphonesimulator
           -configuration Debug
-          -destination "platform=iOS Simulator,OS=18.0,name=iPhone 16"
+          -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16"
           -scmProvider xcode
           clean test | xcbeautify --renderer github-actions

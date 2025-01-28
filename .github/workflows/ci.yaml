@@ -37,7 +37,7 @@ jobs:
       # Homebrewのアップデート
       - name: Update Homebrew
         run: |
-          brew update --preinstall
+          brew update
           cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/foo.rb" > .github/brew-formulae
 
       # Homebrewのキャッシュ

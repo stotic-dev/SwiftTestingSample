@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - "*"
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_16.2.app
+  PROJECT_PATH: SwiftTestingSample.xcodeproj
+  TARGET_SCHEME_NAME: SwiftTestingSample
+
+jobs:
+  build:
+    runs-on: macos-15
+
+    steps:
+      # チェックアウト(リポジトリからソースコードを取得)
+      - name: Check Out repository
+        uses: actions/checkout@v4
+
+      # Xcodeの一覧出力
+      - name: Show Xcode list
+        run: ls /Applications | grep 'Xcode'
+
+      # Xcodeのバージョン指定
+      - name: Select Xcode version
+        run: sudo xcode-select -s ${{ env.DEVELOPER_DIR }}
+
+      # Xcodeのバージョン出力
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      # Homebrewのアップデート
+      - name: Update Homebrew
+        run: |
+          brew update --preinstall
+          cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/foo.rb" > .github/brew-formulae
+
+      # Homebrewのキャッシュ
+      - name: Configure Homebrew cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/Library/Caches/Homebrew/foo--*
+            ~/Library/Caches/Homebrew/downloads/*--foo-*
+          key: brew-${{ hashFiles('.github/brew-formulae') }}
+          restore-keys: brew-
+
+      # Homebrewで依存関係解決
+      - name: Install Homebrew dependencies
+        run: |
+          env HOMEBREW_NO_AUTO_UPDATE=1 brew install xcbeautify
+
+      # 単体テスト
+      - name: App Unit Test
+        run: xcodebuild
+          -project ${PROJECT_PATH}
+          -scheme ${TARGET_SCHEME_NAME}
+          -sdk iphonesimulator
+          -configuration Debug
+          -destination "platform=iOS Simulator,OS=18.0,name=iPhone 16"
+          -scmProvider xcode
+          clean test | xcbeautify --renderer github-actions

@@ -38,7 +38,6 @@ jobs:
       - name: Update Homebrew
         run: |
           brew update
-          cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/foo.rb" > .github/brew-formulae
 
       # Homebrewのキャッシュ
       - name: Configure Homebrew cache

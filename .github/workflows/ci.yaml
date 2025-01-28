@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - "*"
+  push:
+    branches:
+      - "main"
 
 env:
   DEVELOPER_DIR: /Applications/Xcode_16.2.app
@@ -34,8 +37,7 @@ jobs:
       # Homebrewのアップデート
       - name: Update Homebrew
         run: |
-          brew update --preinstall
-          cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/foo.rb" > .github/brew-formulae
+          brew update
 
       # Homebrewのキャッシュ
       - name: Configure Homebrew cache
@@ -59,6 +61,6 @@ jobs:
           -scheme ${TARGET_SCHEME_NAME}
           -sdk iphonesimulator
           -configuration Debug
-          -destination "platform=iOS Simulator,OS=18.0,name=iPhone 16"
+          -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16"
           -scmProvider xcode
           clean test | xcbeautify --renderer github-actions

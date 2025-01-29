@@ -18,6 +18,38 @@ struct ParameterizedSampleTest {
 
 extension ParameterizedSampleTest.CalculatorTest.MultiplicationTest {
     
+    @Test(
+        "掛け算は左辺*右辺の値を返す。左辺右辺どちらかが有限の数でないもしくはNanの場合は例外を返す。",
+        .serialized,
+        arguments: [
+        (2, 5, 10),
+        (0, 5, 0),
+        (5, 0, 0),
+        (Double.nan, 5, nil),
+        (5, Double.nan, nil),
+        (Double.infinity, 5, nil),
+        (5, Double.infinity, nil)
+    ])
+    func 掛け算は左辺と右辺を掛けた値を返す(
+        right: Double,
+        left: Double,
+        expected: Double?
+    ) throws {
+        
+        if let expected {
+            
+            let result = try #require(try Calculator.multiplication(right, left))
+            #expect(expected == result)
+        }
+        else {
+            
+            #expect(throws: CalculateError.self, performing: {
+                
+                let _ = try Calculator.multiplication(right, left)
+            })
+        }
+    }
+    
     @Test(arguments: [
         (2, 5, 10),
         (0, 5, 0),
@@ -29,7 +61,9 @@ extension ParameterizedSampleTest.CalculatorTest.MultiplicationTest {
         expected: Double
     ) throws {
         
-        #expect(expected == Calculator.multiplication(right, left))
+        let result = try Calculator.multiplication(right, left)
+        
+        #expect(expected == result)
     }
     
     @Test(
@@ -40,7 +74,9 @@ extension ParameterizedSampleTest.CalculatorTest.MultiplicationTest {
         left: Double
     ) throws {
         
-        #expect(right * left == Calculator.multiplication(right, left))
+        let result = try Calculator.multiplication(right, left)
+        
+        #expect(right * left == result)
     }
     
     @Test(
@@ -51,6 +87,7 @@ extension ParameterizedSampleTest.CalculatorTest.MultiplicationTest {
         left: Double
     ) throws {
         
-        #expect(right * left == Calculator.multiplication(right, left))
+        let result = try Calculator.multiplication(right, left)
+        #expect(right * left == result)
     }
 }

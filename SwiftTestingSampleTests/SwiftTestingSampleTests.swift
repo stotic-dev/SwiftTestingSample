@@ -8,10 +8,10 @@
 import Testing
 @testable import SwiftTestingSample
 
-@Suite(.tags(.stable))
+@Suite(.tags(.flaky))
 struct CalculatorTest {
     
-    @Test
+    @Test(.tags(.flaky))
     func 掛け算は左辺と右辺を掛けた値を返す() throws {
         
         let result = try Calculator.multiplication(2, 5)

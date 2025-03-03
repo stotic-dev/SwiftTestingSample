@@ -9,6 +9,5 @@ import Testing
 
 extension Tag {
     
-    @Tag static var stable: Tag
     @Tag static var flaky: Tag
 }

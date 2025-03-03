@@ -21,12 +21,22 @@
 			remoteGlobalIDString = BC2AACBD2D4615CF00019BE7;
 			remoteInfo = SwiftTestingSample;
 		};
+		BCF9B74A2D734EFD002FD8E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC2AACB62D4615CF00019BE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC2AACBD2D4615CF00019BE7;
+			remoteInfo = SwiftTestingSample;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC0C55F22D74677B000522EF /* SwiftTestingSample.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SwiftTestingSample.xctestplan; path = ../SwiftTestingSample.xctestplan; sourceTree = "<group>"; };
+		BC0C55F32D74678D000522EF /* SwiftTestingSample_stable.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SwiftTestingSample_stable.xctestplan; path = ../SwiftTestingSample_stable.xctestplan; sourceTree = "<group>"; };
 		BC2AACBE2D4615CF00019BE7 /* SwiftTestingSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTestingSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2AACCE2D4615D300019BE7 /* SwiftTestingSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTestingSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2AACD82D4615D300019BE7 /* SwiftTestingSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTestingSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCF9B7462D734EFD002FD8E8 /* XCTestSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +53,11 @@
 		BC2AACDB2D4615D300019BE7 /* SwiftTestingSampleUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftTestingSampleUITests;
+			sourceTree = "<group>";
+		};
+		BCF9B7472D734EFD002FD8E8 /* XCTestSampleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = XCTestSampleTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,14 +84,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCF9B7432D734EFD002FD8E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		BC2AACB52D4615CF00019BE7 = {
 			isa = PBXGroup;
 			children = (
+				BC0C55F22D74677B000522EF /* SwiftTestingSample.xctestplan */,
+				BC0C55F32D74678D000522EF /* SwiftTestingSample_stable.xctestplan */,
 				BC2AACC02D4615CF00019BE7 /* SwiftTestingSample */,
 				BC2AACD12D4615D300019BE7 /* SwiftTestingSampleTests */,
+				BCF9B7472D734EFD002FD8E8 /* XCTestSampleTests */,
 				BC2AACDB2D4615D300019BE7 /* SwiftTestingSampleUITests */,
 				BC2AACBF2D4615CF00019BE7 /* Products */,
 			);
@@ -88,6 +113,7 @@
 				BC2AACBE2D4615CF00019BE7 /* SwiftTestingSample.app */,
 				BC2AACCE2D4615D300019BE7 /* SwiftTestingSampleTests.xctest */,
 				BC2AACD82D4615D300019BE7 /* SwiftTestingSampleUITests.xctest */,
+				BCF9B7462D734EFD002FD8E8 /* XCTestSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +189,29 @@
 			productReference = BC2AACD82D4615D300019BE7 /* SwiftTestingSampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		BCF9B7452D734EFD002FD8E8 /* XCTestSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF9B74C2D734EFD002FD8E8 /* Build configuration list for PBXNativeTarget "XCTestSampleTests" */;
+			buildPhases = (
+				BCF9B7422D734EFD002FD8E8 /* Sources */,
+				BCF9B7432D734EFD002FD8E8 /* Frameworks */,
+				BCF9B7442D734EFD002FD8E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCF9B74B2D734EFD002FD8E8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BCF9B7472D734EFD002FD8E8 /* XCTestSampleTests */,
+			);
+			name = XCTestSampleTests;
+			packageProductDependencies = (
+			);
+			productName = XCTestSampleTests;
+			productReference = BCF9B7462D734EFD002FD8E8 /* XCTestSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,6 +224,7 @@
 				TargetAttributes = {
 					BC2AACBD2D4615CF00019BE7 = {
 						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
 					};
 					BC2AACCD2D4615D300019BE7 = {
 						CreatedOnToolsVersion = 16.2;
@@ -182,6 +232,11 @@
 					};
 					BC2AACD72D4615D300019BE7 = {
 						CreatedOnToolsVersion = 16.2;
+						TestTargetID = BC2AACBD2D4615CF00019BE7;
+					};
+					BCF9B7452D734EFD002FD8E8 = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
 						TestTargetID = BC2AACBD2D4615CF00019BE7;
 					};
 				};
@@ -202,6 +257,7 @@
 			targets = (
 				BC2AACBD2D4615CF00019BE7 /* SwiftTestingSample */,
 				BC2AACCD2D4615D300019BE7 /* SwiftTestingSampleTests */,
+				BCF9B7452D734EFD002FD8E8 /* XCTestSampleTests */,
 				BC2AACD72D4615D300019BE7 /* SwiftTestingSampleUITests */,
 			);
 		};
@@ -223,6 +279,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BC2AACD62D4615D300019BE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF9B7442D734EFD002FD8E8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +316,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCF9B7422D734EFD002FD8E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +335,11 @@
 			isa = PBXTargetDependency;
 			target = BC2AACBD2D4615CF00019BE7 /* SwiftTestingSample */;
 			targetProxy = BC2AACD92D4615D300019BE7 /* PBXContainerItemProxy */;
+		};
+		BCF9B74B2D734EFD002FD8E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC2AACBD2D4615CF00019BE7 /* SwiftTestingSample */;
+			targetProxy = BCF9B74A2D734EFD002FD8E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -393,6 +468,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftTestingSample/Preview Content\"";
@@ -412,6 +488,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = taichi.satou.SwiftTestingSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTestingSample/Obc/SwiftTestingSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -422,6 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftTestingSample/Preview Content\"";
@@ -441,6 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = taichi.satou.SwiftTestingSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTestingSample/Obc/SwiftTestingSample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -518,6 +598,45 @@
 			};
 			name = Release;
 		};
+		BCF9B74D2D734EFD002FD8E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56LYVN6DMF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = taichi.satou.XCTestSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTestingSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftTestingSample";
+			};
+			name = Debug;
+		};
+		BCF9B74E2D734EFD002FD8E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56LYVN6DMF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = taichi.satou.XCTestSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTestingSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftTestingSample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +672,15 @@
 			buildConfigurations = (
 				BC2AACE92D4615D300019BE7 /* Debug */,
 				BC2AACEA2D4615D300019BE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCF9B74C2D734EFD002FD8E8 /* Build configuration list for PBXNativeTarget "XCTestSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF9B74D2D734EFD002FD8E8 /* Debug */,
+				BCF9B74E2D734EFD002FD8E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

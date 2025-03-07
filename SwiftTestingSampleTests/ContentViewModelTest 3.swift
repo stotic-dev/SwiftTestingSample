@@ -9,9 +9,14 @@ import Testing
 
 @testable import SwiftTestingSample
 
-struct ContentViewModelTest {
+struct ContentViewModelTest_StructuredSample {
+    
+    struct OnAppearCase {}
+    struct TappedButtonCase {}
+}
 
-    @Test(.tags(.flaky))
+extension ContentViewModelTest_StructuredSample.OnAppearCase {
+    @Test
     func 画面表示時にタイトルとメッセージを表示する() {
         
         let viewModel = ContentViewModel()
@@ -24,6 +29,20 @@ struct ContentViewModelTest {
         #expect(viewModel == expected)
     }
     
+    @Test
+    func 〇〇状態で画面表示時に〇〇を表示する() {}
+    
+    @Test
+    func XX状態で画面表示時にXXを表示する() {}
+    
+    @Test
+    func YY状態で画面表示時にYYを表示する() {}
+    
+    @Test
+    func ZZ状態で画面表示時にZZを表示する() {}
+}
+
+extension ContentViewModelTest_StructuredSample.TappedButtonCase {
     @Test(arguments: zip(
         ["Hello World!!", "Good Bye World!!"],
         ["Good Bye World!!", "Hello World!!"]
@@ -39,4 +58,16 @@ struct ContentViewModelTest {
         expected.title = expectedTitle
         #expect(viewModel == expected)
     }
+    
+    @Test
+    func QQ状態でボタンタップ時にQQを表示する() {}
+    
+    @Test
+    func PP状態でボタンタップ時にPPを表示する() {}
+    
+    @Test
+    func UU状態でボタンタップ時にUUを表示する() {}
+    
+    @Test
+    func RR状態でボタンタップ時にRRを表示する() {}
 }
